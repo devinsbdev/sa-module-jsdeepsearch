@@ -128,17 +128,17 @@ sub deepsearchjs
         # check decoded message text for script blocks
         if ( $decoded_str =~ qr/<script.*\<\/script\>/ )
         {
-            $sa_score += 6.00;
+            $sa_score += 8.00;
             info("Found JAVASCRIPT!");
     	  }
         if ( $decoded_str =~ qr/vbscript/ or $decoded_str =~ qr/WScript\.Shell/ )
         {
-            $sa_score += 6.33;
+            $sa_score += 8.33;
             info("Found VBSCRIPT!");
         }
         if ( $decoded_str =~ qr/\-[Ee^]{1,2}[NnCcOoDdEeMmAa^]+ [A-Za-z0-9+\/\=]{5,}/ or $decoded_str =~ qr/powershell\.exe/ )
         {
-            $sa_score += 6.66;
+            $sa_score += 8.66;
             info("Found POWERSHELL!");
         }
 
